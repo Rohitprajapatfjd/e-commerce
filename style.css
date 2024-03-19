@@ -3,10 +3,12 @@
 * {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: "Lato", sans-serif;
+
 }
 
 nav {
@@ -82,9 +84,10 @@ nav {
 .sliderwrapper {
     display: flex;
     width: 500vw;
-   transition: all 1s ease-in-out;
-/* animation: scroll 5s 5s ease-in-out infinite; */
+    transition: all 1s ease-in-out;
+    /* animation: scroll 5s 5s ease-in-out infinite; */
 }
+
 @keyframes scroll {
     from {
         transform: translateX(0);
@@ -121,7 +124,7 @@ nav {
     position: absolute;
     color: white;
     top: 10%;
-    right: 22%;
+    right: 12%;
     font-size: 60px;
     font-weight: 900;
     text-align: center;
@@ -142,8 +145,8 @@ nav {
 .buybtn {
     position: absolute;
     color: white;
-    top: 50%;
-    right: 15%;
+    top: 60%;
+    right: 10%;
     font-size: 30px;
     font-weight: 800;
     border: 1px solid grey;
@@ -176,6 +179,10 @@ nav {
     background-color: rgb(231, 222, 92);
 }
 
+.sliderItem:nth-child(5) .slidebg {
+    background-color: rgb(241, 131, 131);
+}
+
 .sliderItem:nth-child(1) .sliderTitle,
 .sliderItem:nth-child(1) .sliderprice {
     color: rgb(167, 224, 231);
@@ -196,75 +203,175 @@ nav {
     color: rgb(161, 138, 59)
 }
 
+.sliderItem:nth-child(5) .sliderTitle,
+.sliderItem:nth-child(5) .sliderprice {
+    color: rgb(146, 85, 85);
+}
+
 
 
 /* Features */
 
-.features{
+.features {
     display: flex;
     align-items: center;
-    justify-content:space-between;
-    padding: 50px;
+    justify-content: space-between;
+    margin: 50px;
 }
-.features .feature{
+
+.features .feature {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
-.featureImg{
+.featureImg {
     width: 75px;
     height: 75px;
 }
 
-.featureTitle{
-font-size: 20px;
-font-weight: 600 ;
-margin: 20px;
+.featureTitle {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 20px;
 }
 
-.featureDesc{
+.featureDesc {
     color: grey;
     width: 50%;
     height: 100px;
 }
 
-.product{
+.product {
+
     height: 100vh;
     background-color: whitesmoke;
     position: relative;
-    clip-path: polygon(0 16%, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 12%, 100% 0, 100% 100%, 0 100%);
 }
-.productImg{
+
+.payment {
+    position: absolute;
+    background-color: white;
+    width: 550px;
+    height: 550px;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 10px 50px;
+    display: none;
+    flex-direction: column;
+    box-shadow: 12px 8px 18px -1px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 12px 8px 18px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 12px 8px 18px -1px rgba(0, 0, 0, 0.75);
+    transition: all 1.7s linear ease-in-out;
+}
+
+.paymentTitle {
+    font-size: 29px;
+    color: lightgrey;
+    padding-bottom: 10px;
+}
+
+label {
+    font-size: 20px;
+    font-family: 300;
+}
+
+.payinput {
+    margin: 12px 0px;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+.payinput::placeholder {
+    color: rgb(134, 131, 131);
+    font-size: 15px;
+}
+
+.cardicon {
+    display: flex;
+    gap: 10px;
+}
+
+.cardinfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sm {
+    width: 25%;
+}
+
+.paybutton {
+    position: absolute;
+    bottom: -30px;
+    height: 40px;
+    width: 100%;
+    left: 0;
+    box-shadow: 12px 8px 18px -1px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 12px 8px 18px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 12px 8px 18px -1px rgba(0, 0, 0, 0.75);
+    background-color: rgb(48, 177, 48);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.closebtn {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    top: 10px;
+    right: 10px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 1px 2px 2px 2px;
+    cursor: pointer;
+}
+
+.productImg {
     width: 50%;
+    margin: 50px;
 }
-.product-details{
+
+.product-details {
     position: absolute;
     top: 10%;
     right: 0%;
     width: 40%;
     padding: 50px;
 }
-.productTitle{
+
+.productTitle {
     font-size: 75px;
     font-weight: 900;
     margin-bottom: 25px;
 }
-.productPrice{
+
+.productPrice {
     margin-bottom: 14px;
     font-size: 30px;
 }
-.productdesc{
+
+.productdesc {
     color: grey;
     font-size: 20px;
     margin-bottom: 20px;
 }
-.colors , .sizes{
+
+.colors,
+.sizes {
     display: flex;
-    margin-bottom:20px ;
+    margin-bottom: 20px;
 }
-.color{
+
+.color {
     width: 32px;
     height: 32px;
     border-radius: 5px;
@@ -273,17 +380,20 @@ margin: 20px;
     margin-right: 10px;
     box-shadow: 3px 3px 3px rgb(80, 77, 77);
 }
-.color:last-child{
+
+.color:last-child {
     background-color: antiquewhite;
 }
-.size{
+
+.size {
     border: 1px solid black;
     padding: 5px 13px;
     margin-right: 20px;
     cursor: pointer;
     font-size: 20px;
 }
-.productbtn{
+
+.productbtn {
     float: right;
     padding: 10px 20px;
     cursor: pointer;
@@ -293,7 +403,346 @@ margin: 20px;
 }
 
 .productbtn:hover {
-    
+
     background-color: white;
     color: black;
-    
+}
+
+.gallery {
+    display: flex;
+    padding: 60px;
+}
+
+.gallerytitle {
+    padding: 12px 0px;
+}
+
+.galleryItem {
+    flex: 1;
+    padding: 50px;
+}
+
+.galleryimg {
+    width: 100%;
+    box-shadow: 12px 8px 18px -1px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 12px 8px 18px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 12px 8px 18px -1px rgba(0, 0, 0, 0.75);
+}
+
+.galleryimg:hover {
+    translate: 20px 2rem 150px;
+}
+
+.newseason {
+    display: flex;
+    background-color: black;
+    color: white;
+    margin: 20px;
+}
+
+.seasonitem {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.seasonTitle {
+    padding: 25px;
+
+}
+
+.seasonimg {
+    width: 100%;
+    height: 500px;
+}
+
+.seasonbtn {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+footer {
+    display: flex;
+}
+
+.footerleft {
+    flex: 2;
+
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px 0px;
+
+}
+
+.footerTitle {
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+
+.flist {
+    padding: 0;
+    list-style: none;
+}
+
+.fmenu {
+    margin: 10px;
+    color: rgb(119, 118, 118);
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.fmenu:hover {
+    text-decoration: underline;
+}
+
+.footerright {
+    flex: 1;
+    padding: 10px 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.frmenu {
+    margin: 10px 2px;
+}
+
+.mailinput {
+    padding: 5px;
+}
+
+.frmenuTitle {
+    padding-bottom: 14px;
+}
+
+.joinbtn {
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
+
+.ficons {
+    display: flex;
+    padding-top: 4px;
+}
+
+.ficon {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+}
+
+@media screen and (max-width:480px) {
+    nav {
+        padding: 12px;
+    }
+
+    .search {
+        display: none;
+    }
+
+    .navbottom {
+        flex-wrap: wrap;
+
+    }
+
+    .menuitem {
+        margin: 10px;
+    }
+
+    .slider {
+        clip-path: none;
+    }
+
+    .sliderItem img {
+        width: 90%;
+    }
+
+    .slidebg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .sliderTitle {
+        display: none;
+    }
+
+    .buybtn {
+        top: 80%;
+        font-size: 20px;
+        padding: 3px 5px;
+        right: 7%;
+    }
+
+    .sliderprice {
+        font-size: 40px;
+        top: 8px;
+        left: 5%;
+
+    }
+
+    .features {
+        flex-direction: column;
+    }
+
+    .product {
+        clip-path: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .productImg {
+        width: 80%;
+    }
+
+    .product-details {
+        position: relative;
+        width: 100%;
+        padding: unset;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        top: 0;
+    }
+
+    .productTitle {
+        font-size: 50px;
+        margin-bottom: 15px;
+    }
+
+    .gallery {
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .newseason {
+        flex-direction: column;
+    }
+
+    .seasonitem:nth-child(2) {
+        padding: 50px;
+
+    }
+
+    .seasonTitle {
+        padding: 25px 0px;
+    }
+
+    .seasonbtn {
+        margin-bottom: 15px 0px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footerleft {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .footerright {
+        background-color: whitesmoke;
+    }
+
+    .payment {
+        width: 70%;
+        /* padding: 5px; */
+    }
+}
+
+@media screen and (max-width:1050px) and (min-width: 500px) {
+    .sliderTitle {
+        font-size: 40px;
+        top: 3%;
+        right: 5%;
+
+    }
+
+    .buybtn {
+        top: 80%;
+        font-size: 20px;
+        padding: 3px 5px;
+        right: 7%;
+    }
+
+    .productImg {
+        width: 60%;
+        margin-top: 70px;
+    }
+
+    .product-details {
+        top: 55%;
+        right: 10%;
+        padding: 0;
+        width: 80%;
+    }
+
+    .productbtn {
+        position: absolute;
+        top: 70%;
+        right: 10%;
+    }
+
+}
+
+@media screen and (max-width:850px) and (min-width: 500px) {
+    .sliderItem img {
+        width: 90%;
+    }
+
+    .slidebg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .sliderTitle {
+        display: none;
+    }
+
+    .gallery {
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+
+    }
+
+    .newseason {
+        flex-direction: column;
+    }
+
+    .seasonitem:nth-child(2) {
+        padding: 50px;
+
+    }
+
+    .seasonTitle {
+        padding: 25px 0px;
+    }
+
+    .seasonbtn {
+        margin-bottom: 15px 0px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footerleft {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .payment {
+        width: 70%;
+        /* padding: 5px; */
+    }
+}
