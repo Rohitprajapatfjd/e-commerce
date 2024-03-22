@@ -140,3 +140,12 @@ document.querySelector(".productbtn").addEventListener("click",()=>{
 document.querySelector(".closebtn").addEventListener("click", () => {
     productform.style.display = 'none'
 })
+
+var counter = 0;
+setInterval(function(){
+    wrapper.style.transform = `translateX(${-100 * counter}vw)`
+    counter++;
+    if(counter >= 5){
+        counter = 0;
+    }
+},4000)
